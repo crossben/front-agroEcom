@@ -104,9 +104,9 @@ class ApiService {
     }
 
     async deleteProduct(id: string): Promise<boolean> {
-        const productIndex = mockProducts.findIndex(p => p.id === id);
-        if (productIndex !== -1) {
-            mockProducts.splice(productIndex, 1);
+        const response = await api.delete(`/products/${id}`);
+        if (response.data.message === 'Product deleted successfully') {
+            mockProducts = mockProducts.filter(p => p.id !== id);
             return true;
         }
         return false;
