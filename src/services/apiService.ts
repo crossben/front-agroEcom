@@ -3,6 +3,8 @@ import api from './api';
 
 let mockUsers: User[] = [];
 
+console.log(mockUsers);
+
 let mockProducts: Product[] = [];
 class ApiService {
     // Authentication
